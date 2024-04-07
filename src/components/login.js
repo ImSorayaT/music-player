@@ -7,11 +7,12 @@ const scopes = [
     "streaming",
     "user-read-email",
     "user-read-private",
-    "playlist-read-private"
+    "playlist-read-private",
+    "user-read-playback-state"
 ];
 
 
-export const loginUrl = `${authEndpoint}?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${redirectUri}&scope=${scopes.join(
+export const loginUrl = `${authEndpoint}?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${redirectUri}&scope=${scopes.join(
     "%20"
   )}`;
   
