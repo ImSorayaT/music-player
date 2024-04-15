@@ -47,7 +47,7 @@ class List_playlists extends React.Component{
 
     render(){
 
-        console.log(this.state.result);
+        // console.log(this.state.result);
         
         return (
             <div>

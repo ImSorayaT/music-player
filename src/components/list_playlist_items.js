@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 class List_playlist_items extends React.Component{
     constructor(props){
         super(props);
-        console.log(this.props)
+        // console.log(this.props)
 
         this.state = {
             tracks: []
@@ -27,7 +27,7 @@ class List_playlist_items extends React.Component{
         fetch('https://api.spotify.com/v1/playlists/'+this.props.playlist_id+'/tracks', authParams)
         .then(result => result.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
             if(!data.status){
                 this.setState({
                     tracks : data.items
