@@ -1,7 +1,7 @@
 import React from "react";
 import {CLIENT_ID} from '../config';
 import { useEffect, useState } from 'react';
-import List_playlist_items from './list_playlist_items';
+import ListPlaylistItems from './list_playlist_items';
 
 class List_playlists extends React.Component{
 
@@ -11,6 +11,8 @@ class List_playlists extends React.Component{
         this.state = {
             result: [],
         }
+
+        
     }
 
     componentDidMount(){
@@ -58,7 +60,10 @@ class List_playlists extends React.Component{
                                 return(
                                     <li key={index}>
                                         <strong>{playlist.name}</strong>
-                                        <List_playlist_items playlist_id={playlist.id} token={this.props.token}/>
+                                        <ListPlaylistItems playlist_id={playlist.id} 
+                                            token={this.props.token} 
+                                            currentTrack={this.props.currentTrack}
+                                            changeTrackFunction={this.props.changeTrackFunction} />
                                     </li>
                                 )
                             }
