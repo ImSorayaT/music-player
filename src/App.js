@@ -1,5 +1,6 @@
 import logo from './logo.svg';
-import './App.css';
+import './style/App.css';
+import './style/tailwind.css';
 import Login from './components/login';
 import LoggedIn from './components/loggedIn';
 import { useEffect, useState } from 'react';
@@ -24,7 +25,7 @@ function App() {
  
 
   return (
-    <div className="App">
+    <div className="App max-w-screen-xl	m-auto	px-20">
         {!token ? <Login/> : <> <LoggedIn token={token} setToken={setToken} />  </>}
     </div>
   );

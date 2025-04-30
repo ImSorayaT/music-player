@@ -54,12 +54,12 @@ class List_playlists extends React.Component{
         return (
             <div>
                 {this.state.result.status ? this.state.result.message : 
-                    <ul>
+                    <ul className={'list-none space-y-5'}>
                         {this.state.result.map(
                             (playlist, index) => {
                                 return(
                                     <li key={index}>
-                                        <strong>{playlist.name}</strong>
+                                        <h2 className={'text-2xl'}>{playlist.name}</h2>
                                         <ListPlaylistItems playlist_id={playlist.id} 
                                             token={this.props.token} 
                                             currentTrack={this.props.currentTrack}
