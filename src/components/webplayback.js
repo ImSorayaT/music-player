@@ -24,8 +24,7 @@ class WebPlayback extends React.Component{
     render(){
         return(
             <>
-                {this.props.music.offset}
-                <SpotifyWebPlayer 
+                <SpotifyWebPlayer
                 token={this.props.token}
                 uris={this.props.music.uris}
                 offset={this.props.music.offset}
