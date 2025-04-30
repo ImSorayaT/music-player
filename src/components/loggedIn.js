@@ -45,15 +45,17 @@ class LoggedIn extends React.Component{
     render(){
         return <>
             <button onClick={this.logout}>Log out</button>
-            <div id="playback-container">
-                <WebPlayback 
-                token={this.props.token}
-                music={this.state.music}
-                />
+            <div className={'flex flex-row-reverse '}>
+                <div id="playback-container" className={'w-[450px]'}>
+                    <WebPlayback
+                    token={this.props.token}
+                    music={this.state.music}
+                    />
+                </div>
+                <List_playlists
+                    token={this.props.token}
+                    changeTrackFunction={this.changeTrackFunction}/>
             </div>
-            <List_playlists
-                token={this.props.token} 
-                changeTrackFunction={this.changeTrackFunction}/>
         </>;
     }
 }

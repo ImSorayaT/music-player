@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './style/App.css';
 import './style/tailwind.css';
 import Login from './components/login';
 import LoggedIn from './components/loggedIn';

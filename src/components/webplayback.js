@@ -16,7 +16,7 @@ class WebPlayback extends React.Component{
         }
     }
 
-    componentDidMount(){        
+    componentDidMount(){
 
 
     }
@@ -24,11 +24,15 @@ class WebPlayback extends React.Component{
     render(){
         return(
             <>
-                <SpotifyWebPlayer
-                token={this.props.token}
-                uris={this.props.music.uris}
-                offset={this.props.music.offset}
-                play={(this.props.music.playStatus) ? this.props.music.playStatus : false} />
+                <div className={'sticky top-[20px]'}>
+                    <SpotifyWebPlayer
+                    token={this.props.token}
+                    uris={this.props.music.uris}
+                    offset={this.props.music.offset}
+                    play={(this.props.music.playStatus) ? this.props.music.playStatus : false}
+                    hideAttribution={true}
+                    inlineVolume={false}/>
+                </div>
            </>)
         
     }
