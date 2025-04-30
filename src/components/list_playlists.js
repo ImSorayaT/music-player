@@ -16,8 +16,6 @@ class List_playlists extends React.Component{
     }
 
     componentDidMount(){
-       
-        
         var authParams = {
             headers: {
               'Authorization': 'Bearer ' + this.props.token
@@ -62,7 +60,6 @@ class List_playlists extends React.Component{
                                         <h2 className={'text-2xl'}>{playlist.name}</h2>
                                         <ListPlaylistItems playlist_id={playlist.id} 
                                             token={this.props.token} 
-                                            currentTrack={this.props.currentTrack}
                                             changeTrackFunction={this.props.changeTrackFunction} />
                                     </li>
                                 )

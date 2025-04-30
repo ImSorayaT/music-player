@@ -13,17 +13,26 @@ class LoggedIn extends React.Component{
         this.changeTrackFunction = this.changeTrackFunction.bind(this);
 
         this.state = {
-            currentTrack: '',
+            music: {
+                'uris' : [],
+                'play' : false,
+                'offset' : ''
+            }
         }
 
 
     }
 
     changeTrackFunction(playlistTracks, offset){
-        this.setState({
-            'playlistTrack' : playlistTracks,
-            'play' : true,
-            'offset' : offset
+        this.setState(prevState => {
+            let newState = Object.assign({}, prevState);
+            newState.music = {
+                uris : playlistTracks,
+                play: true,
+                offset: offset
+            };
+
+            return newState
         });
     }
 
@@ -34,20 +43,16 @@ class LoggedIn extends React.Component{
     };
 
     render(){
-        console.log(this.state.playlistTrack);
         return <>
             <button onClick={this.logout}>Log out</button>
             <div id="playback-container">
                 <WebPlayback 
-                token={this.props.token} 
-                playStatus={this.state.play}
-                uris={this.state.playlistTrack}
-                offset={this.state.offset}
+                token={this.props.token}
+                music={this.state.music}
                 />
             </div>
             <List_playlists
                 token={this.props.token} 
-                currentTrack={this.state.currentTrack} 
                 changeTrackFunction={this.changeTrackFunction}/>
         </>;
     }

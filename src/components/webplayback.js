@@ -2,6 +2,7 @@ import React from "react";
 import {CLIENT_ID} from '../config';
 import List_playlists from "./list_playlists";
 import SpotifyWebPlayer from "react-spotify-web-playback";
+import { spotifyApi } from 'react-spotify-web-playback';
 
   
 
@@ -9,7 +10,6 @@ class WebPlayback extends React.Component{
 
     constructor(props){
         super(props);
-        console.log(this.props)
 
         this.state = {
             player: []
@@ -17,19 +17,19 @@ class WebPlayback extends React.Component{
     }
 
     componentDidMount(){        
-        console.log(this.props.currentTrack);
-    
+
 
     }
 
     render(){
         return(
             <>
+                {this.props.music.offset}
                 <SpotifyWebPlayer 
                 token={this.props.token}
-                uris={this.props.uris}
-                offset={this.props.offset}
-                play={(this.props.playStatus) ? this.props.playStatus : false} />
+                uris={this.props.music.uris}
+                offset={this.props.music.offset}
+                play={(this.props.music.playStatus) ? this.props.music.playStatus : false} />
            </>)
         
     }
