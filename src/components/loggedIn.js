@@ -1,6 +1,6 @@
 import React from "react";
 import {CLIENT_ID} from '../config';
-import List_playlists from "./list_playlists";
+import ListPlaylists from "./list_playlists";
 import WebPlayback from "./webplayback";
 
   
@@ -55,9 +55,10 @@ class LoggedIn extends React.Component{
                     music={this.state.music}
                     />
                 </div>
-                <List_playlists
+
+                <ListPlaylists
                     token={this.props.token}
-                    changeTrackFunction={this.changeTrackFunction}/>
+                    changeTrackFunction={this.changeTrackFunction} />
             </div>
         </>;
     }
