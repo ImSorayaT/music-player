@@ -2,6 +2,7 @@ import React from "react";
 import {CLIENT_ID} from '../config';
 import { useEffect, useState } from 'react';
 import SpotifyWebPlayer from "react-spotify-web-playback";
+import {millisToMinutesAndSeconds} from '../hooks/tracks'
 
   
 
@@ -54,18 +55,20 @@ class ListPlaylistItems extends React.Component{
                 {this.state.tracks === undefined ? 'something wrong with the request. Check logs' : 
                     <ul>
                         {this.state.tracks.map((track, index) => {
-
                             return(
-                                <li key={index}>
-                                   <button  onClick = { () => {
-                                    console.log(index);
-                                        this.changeTrackFunction(this.state.playlistTracks, index);
-                                    }}>
-                                    
-                                        {track.track.name}
-                                    </button>
+                                <li key={index} className="px-2 py-4 flex gap-4 border-b">
+                                    <span className="block basis-[70px] shrink-0">
+                                        <button  onClick = { () => {
+                                            this.changeTrackFunction(this.state.playlistTracks, index);
+                                        }}>
+                                            Play
+                                        </button>
+                                        {index + 1}
+                                    </span> 
+                                    <span className="block basis-[50%]">{track.track.name}</span>
+                                    <span className="block basis-full">{track.track.artists[0].name}</span>
+                                    <span className="block basis-auto">{ millisToMinutesAndSeconds(track.track.duration_ms)}</span>
 
-                                   
                                             
                                 </li>
                             )

@@ -44,9 +44,12 @@ class LoggedIn extends React.Component{
 
     render(){
         return <>
-            <button onClick={this.logout}>Log out</button>
-            <div className={'flex flex-row-reverse '}>
-                <div id="playback-container" className={'w-[450px]'}>
+            <div className={'py-2 bg-[#333] mb-8 px-10'}>
+                <button onClick={this.logout}>Log out</button>
+            </div>
+
+            <div className={'flex flex-row-reverse justify-between gap-[40px] px-10'}>
+                <div id="playback-container" className={'w-[420px]'}>
                     <WebPlayback
                     token={this.props.token}
                     music={this.state.music}

@@ -5,6 +5,8 @@
 body{
     background-color: #be6848;
     color: #fff;
+    overflow: hidden;
+    font-size: 13px;
 }
 body ._ControlsRSWP{
     width: 100%;
@@ -13,20 +15,27 @@ body .rswp__active{
     width: 100%;
 }
 body .PlayerRSWP{
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(64px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 
 }
 
-._InfoRSWP > a{
+body .PlayerRSWP a{
     width: 120px !important;
     height: 120px !important;
+    min-width: auto;
+    min-height: auto;
 }
-.__14asrht img{
-    width: 120px !important;
-    height: 120px !important;
+
+body .PlayerRSWP ._ContentWrapperRSWP{
+    width: auto;
+}
+
+body .PlayerRSWP a img{
+    width: 100% !important;
+    height: 100% !important;
 }

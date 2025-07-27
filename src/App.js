@@ -24,7 +24,7 @@ function App() {
  
 
   return (
-    <div className="App max-w-screen-xl	m-auto	px-20">
+    <div className="App	m-auto	h-screen bg-[url('https://images.unsplash.com/photo-1750247400011-1effe6b427a8?q=80')]">
         {!token ? <Login/> : <> <LoggedIn token={token} setToken={setToken} />  </>}
     </div>
   );
